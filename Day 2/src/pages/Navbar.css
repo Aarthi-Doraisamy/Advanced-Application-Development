@@ -1,0 +1,86 @@
+/* Navbar.css */
+
+.navbar {
+    background-color: #4CAF50; /* Green background color */
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Increased shadow for depth */
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-item {
+    margin-left: 2rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-item:first-child {
+    margin-left: 0;
+}
+
+.navbar-item a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 1rem; /* Increased padding for better touch targets */
+}
+
+.navbar-item a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Change background color on hover */
+    border-radius: 4px; /* Add rounded corners on hover */
+}
+
+.navbar-item a:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-item a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+    background-color: #fff; /* Change text underline color on hover */
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        display: none; /* Hide desktop menu on mobile */
+    }
+
+    .navbar-item {
+        margin: 0.5rem 0;
+    }
+}
